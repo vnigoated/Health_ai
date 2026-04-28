@@ -60,7 +60,7 @@ function Nav() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const links = ["Features", "How It Works", "Technology", "Testimonials"]
+  const links = ["Features", "How It Works", "Technology"]
 
   return (
     <motion.nav
@@ -497,65 +497,6 @@ function Stats() {
   )
 }
 
-/* ─────────────────────────── Testimonials ─────────────────────────── */
-
-const TESTIMONIALS = [
-  { name: "Dr. Priya Sharma", role: "General Physician, Mumbai",
-    avatar: "PS", color: "from-cyan-400 to-teal-500",
-    text: "HealthAI's symptom checker has become an invaluable second opinion tool in my practice. The accuracy is remarkable and the UI is incredibly intuitive." },
-  { name: "Rahul Mehta", role: "Patient, Pune",
-    avatar: "RM", color: "from-violet-400 to-purple-500",
-    text: "I uploaded my chest X-ray and got a detailed AI report in seconds. It flagged something my clinic missed. The telemedicine chat helped me understand the findings immediately." },
-  { name: "Dr. Ananya Singh", role: "Radiologist, Delhi",
-    avatar: "AS", color: "from-emerald-400 to-teal-500",
-    text: "The disease detection module for X-rays is genuinely impressive. It's a powerful tool for quick triaging, especially in high-volume settings." },
-]
-
-function Testimonials() {
-  return (
-    <section id="testimonials" className="py-28 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-6">
-        <FadeIn className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-xs font-semibold tracking-wide mb-4">
-            <Star className="w-3.5 h-3.5 fill-yellow-400" /> Loved by Professionals
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tight">
-            Trusted by doctors{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">&amp; patients</span>
-          </h2>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            See what healthcare professionals and patients are saying about HealthAI.
-          </p>
-        </FadeIn>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((t, i) => (
-            <FadeIn key={t.name} delay={i * 0.12}>
-              <div className="p-7 rounded-2xl bg-slate-950/60 border border-white/8 hover:border-white/20 transition-all hover:-translate-y-1 h-full flex flex-col">
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-slate-300 text-sm leading-relaxed flex-1 mb-6">"{t.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-white text-xs font-bold shrink-0`}>
-                    {t.avatar}
-                  </div>
-                  <div>
-                    <p className="text-white font-semibold text-sm">{t.name}</p>
-                    <p className="text-slate-400 text-xs">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 /* ─────────────────────────── CTA ─────────────────────────── */
 
 function CTA() {
@@ -654,7 +595,6 @@ export default function LandingPage() {
       <HowItWorks />
       <Technology />
       <Stats />
-      <Testimonials />
       <CTA />
       <Footer />
     </div>
