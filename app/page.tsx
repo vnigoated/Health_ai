@@ -579,6 +579,26 @@ function Footer() {
           <p className="text-slate-600 text-sm">© 2025 HealthAI. For educational purposes only — not a substitute for medical advice.</p>
           <p className="text-slate-600 text-xs">Built with advanced AI &amp; cloud infrastructure</p>
         </div>
+        <div className="mt-6 text-center sm:text-left">
+          <p className="text-slate-500 text-sm">
+            Created by{" "}
+            <a href="https://varun.sparkstudio.co.in/" target="_blank" rel="noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              Varun Inamdar
+            </a>
+            {" · "}
+            <a href="https://piyush.sparkstudio.co.in/" target="_blank" rel="noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              Piyush Dhoka
+            </a>
+            {" · "}
+            <a href="https://vedant.sparkstudio.co.in/" target="_blank" rel="noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              Vedant Pandhare
+            </a>
+            {" · "}
+            <a href="https://www.linkedin.com/in/aadarshpathre/" target="_blank" rel="noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              Aadarsh Pathre
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   )
