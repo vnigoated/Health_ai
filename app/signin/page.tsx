@@ -1,12 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { Suspense, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Heart, Mail, Lock, Eye, EyeOff, Loader2, AlertCircle } from "lucide-react"
 
-export default function SignInPage() {
+function SignInForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const from = searchParams.get("from") || "/dashboard"
@@ -158,5 +158,13 @@ export default function SignInPage() {
         </p>
       </motion.div>
     </div>
+  )
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-slate-950 flex items-center justify-center"><div className="text-slate-400">Loading...</div></div>}>
+      <SignInForm />
+    </Suspense>
   )
 }
